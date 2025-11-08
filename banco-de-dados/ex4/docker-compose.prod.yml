@@ -1,0 +1,12 @@
+# docker-compose.prod.yml
+version: '3.8'
+services:
+  mongodb:
+    image: mongo:5.0  # Usa uma versão específica e otimizada
+    container_name: orion_mongo_db_prod
+    ports:
+      - "27017:27017"
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=orion_admin
+      - MONGO_INITDB_ROOT_PASSWORD=orion_admin_pass
+    command: mongod --bind_ip_all
