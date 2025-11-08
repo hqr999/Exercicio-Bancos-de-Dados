@@ -1,0 +1,4 @@
+# Dockerfile.dev
+FROM mongo:latest
+# Adicione dependências ou configurações de dev, se necessário
+CMD ["mongod", "--bind_ip_all"]

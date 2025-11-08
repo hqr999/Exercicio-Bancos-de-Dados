@@ -1,0 +1,12 @@
+// Adicionar campo comentarios ao post "Flexibilidade do MongoDB"
+db.posts.updateOne(
+  { titulo: "Flexibilidade do MongoDB" },
+  {
+    $set: {
+      comentarios: [
+        { texto: "Ótimo artigo!", autor: "Pedro", data: new Date() },
+        { texto: "Gostei da explicação!", autor: "Ana", data: new Date() }
+      ]
+    }
+  }
+);

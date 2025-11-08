@@ -1,0 +1,20 @@
+// Selecionar ou criar o banco orion_db
+use orion_db;
+
+// Inserir o primeiro documento
+db.posts.insertOne({
+  titulo: "Introdução ao NoSQL",
+  autor: "João Silva",
+  conteudo: "Este é um artigo básico sobre bancos NoSQL."
+});
+
+// Inserir o segundo documento com campo tags
+db.posts.insertOne({
+  titulo: "Flexibilidade do MongoDB",
+  autor: "Maria Oliveira",
+  conteudo: "Explorando a flexibilidade de esquemas no MongoDB.",
+  tags: ["nosql", "flexivel"]
+});
+
+// Consultar todos os documentos
+db.posts.find();

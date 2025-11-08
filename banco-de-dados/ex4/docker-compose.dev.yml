@@ -1,0 +1,15 @@
+version: '3.8'
+services:
+  mongodb:
+      build:
+          context: . 
+          dockerfile: Dockerfile.dev 
+      container_name: orion_mongo_db_dev 
+      ports: 
+          - "27017:27017"
+      volumes:
+          - ./data:/data/db #Monta volume local para persistência 
+      environment:
+          - MONGO_INITDB_ROOT_USERNAME=orion_admin
+          - MONGO_INITDB_ROOT_PASSWORD=orion_admin_pass
+      command: mongod --bind_ip_all
